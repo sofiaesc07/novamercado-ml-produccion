@@ -1,0 +1,54 @@
+{
+  "tienda_id": 5,
+  "fecha": "2025-11-17",
+  "ventas": [
+    {
+      "familia_id": "abarrotes",
+      "ventas": 994
+    },
+    {
+      "familia_id": "bebe",
+      "ventas": 50
+    },
+    {
+      "familia_id": "bebidas",
+      "ventas": 1292
+    },
+    {
+      "familia_id": "carnes",
+      "ventas": 182
+    },
+    {
+      "familia_id": "cuidado_personal",
+      "ventas": 118
+    },
+    {
+      "familia_id": "frutas_verduras",
+      "ventas": -4
+    },
+    {
+      "familia_id": "lacteos",
+      "ventas": 358
+    },
+    {
+      "familia_id": "licores",
+      "ventas": 85
+    },
+    {
+      "familia_id": "limpieza",
+      "ventas": 202
+    },
+    {
+      "familia_id": "mascotas",
+      "ventas": 63
+    },
+    {
+      "familia_id": "panaderia",
+      "ventas": 213
+    },
+    {
+      "familia_id": "snacks",
+      "ventas": 386
+    }
+  ]
+}

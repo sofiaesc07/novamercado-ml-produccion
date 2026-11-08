@@ -1,0 +1,10 @@
+.env
+__pycache__/
+.pytest_cache/
+*.pyc
+.venv/
+model_store/
+airflow/logs/
+*.db
+
+*.joblib
