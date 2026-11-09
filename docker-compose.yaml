@@ -70,11 +70,12 @@ services:
       - sh
       - -ec
       - |
-        chown -R 50000:0 /app/model_store /mlflow/artifacts
-        chmod -R ug+rwX /app/model_store /mlflow/artifacts
+        chown -R 50000:0 /app/model_store /mlflow/artifacts /opt/airflow/auth
+        chmod -R ug+rwX /app/model_store /mlflow/artifacts /opt/airflow/auth
     volumes:
       - model-store:/app/model_store
       - mlflow-data:/mlflow
+      - airflow-auth:/opt/airflow/auth
     depends_on:
       bootstrap:
         condition: service_completed_successfully
@@ -91,7 +92,16 @@ services:
       model-store-init:
         condition: service_completed_successfully
     restart: 'no'
-    command: ['bash', '-c', 'python /app/init_airflow_auth.py && airflow db migrate']
+    # La carpeta del volumen puede aparecer como root:root 755 en el primer arranque.
+    # Preparar permisos en el MISMO contenedor antes de bajar privilegios.
+    user: '0:0'
+    command:
+      - bash
+      - -ec
+      - |
+        chown -R 50000:0 /opt/airflow/auth
+        chmod -R ug+rwX /opt/airflow/auth
+        su -s /bin/bash airflow -c 'python /app/init_airflow_auth.py && airflow db migrate' 
   airflow-api-server:
     <<: *airflow-common
     command: ['airflow','api-server']
