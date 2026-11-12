@@ -8,3 +8,6 @@ airflow/logs/
 *.db
 
 *.joblib
+
+# Datos originales proporcionados para el laboratorio
+data/raw/*.csv
