@@ -1,0 +1,11 @@
+﻿NAME                                       IMAGE                                    COMMAND                  SERVICE                 CREATED              STATUS                        PORTS
+novamercado_lab2-airflow-api-server-1      novamercado_lab2-airflow-api-server      "/usr/bin/dumb-init ÔÇª"   airflow-api-server      3 days ago           Up About a minute             0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp
+novamercado_lab2-airflow-dag-processor-1   novamercado_lab2-airflow-dag-processor   "/usr/bin/dumb-init ÔÇª"   airflow-dag-processor   3 days ago           Up About a minute             8080/tcp
+novamercado_lab2-airflow-db-1              postgres:16.8                            "docker-entrypoint.sÔÇª"   airflow-db              4 days ago           Up About a minute (healthy)   5432/tcp
+novamercado_lab2-airflow-init-1            novamercado_lab2-airflow-init            "/usr/bin/dumb-init ÔÇª"   airflow-init            3 days ago           Exited (0) 42 seconds ago     
+novamercado_lab2-airflow-scheduler-1       novamercado_lab2-airflow-scheduler       "/usr/bin/dumb-init ÔÇª"   airflow-scheduler       3 days ago           Up About a minute             8080/tcp
+novamercado_lab2-api-1                     novamercado_lab2-api                     "uvicorn api.main:apÔÇª"   api                     About a minute ago   Up 41 seconds                 0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
+novamercado_lab2-bootstrap-1               novamercado_lab2-bootstrap               "python -m novamercaÔÇª"   bootstrap               3 days ago           Exited (0) 53 seconds ago     
+novamercado_lab2-mlflow-1                  novamercado_lab2-mlflow                  "mlflow server --hosÔÇª"   mlflow                  3 days ago           Up About a minute             0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp
+novamercado_lab2-model-store-init-1        alpine:3.20.3                            "sh -ec 'chown -R 50ÔÇª"   model-store-init        3 days ago           Exited (0) 52 seconds ago     
+novamercado_lab2-product-db-1              postgres:16.8                            "docker-entrypoint.sÔÇª"   product-db              4 days ago           Up About a minute (healthy)   5432/tcp
