@@ -1,0 +1,14 @@
+﻿{
+    "tienda_id":  5,
+    "familias":  [
+                     {
+                         "familia_id":  "abarrotes",
+                         "en_promocion":  0
+                     },
+                     {
+                         "familia_id":  "bebidas",
+                         "en_promocion":  8
+                     }
+                 ],
+    "fecha":  "2026-03-01"
+}

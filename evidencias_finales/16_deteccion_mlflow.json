@@ -1,0 +1,9 @@
+﻿{
+    "prueba":  "Deteccion de interrupcion de MLflow",
+    "fecha":  "2026-11-11 21:14:07",
+    "deteccion_segundos":  11.74,
+    "limite_segundos":  60,
+    "intentos":  1,
+    "ultimo_resultado":  "{\"estado\":\"degradado\",\"motivo\":\"mlflow\"}",
+    "aprobado":  true
+}

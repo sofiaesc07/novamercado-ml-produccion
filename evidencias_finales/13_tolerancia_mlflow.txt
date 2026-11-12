@@ -1,0 +1,33 @@
+﻿PRUEBA DE TOLERANCIA A FALLOS DE MLFLOW
+
+Estado inicial:
+- FastAPI /health: ok
+- Modelo: novamercado-ventas
+- Alias: champion
+- Versión: 1
+
+Interrupción:
+- Acción: docker compose stop mlflow
+- Resultado de /health: degradado
+- Motivo: mlflow
+
+Predicción durante la interrupción:
+- Resultado: exitoso
+- Modelo utilizado: versión 1
+- Tienda: 5
+- Fecha: 2026-03-01
+- Familia abarrotes:
+  - Venta esperada: 1212.0
+  - Cantidad sugerida: 1637
+
+Restauración:
+- Acción: docker compose start mlflow
+- Resultado de /health: ok
+- No fue necesario reiniciar FastAPI.
+
+Conclusión:
+El servicio mantuvo la capacidad de predicción durante la
+interrupción temporal de MLflow y recuperó su estado saludable.
+
+Limitación:
+No se midieron los tiempos exactos de detección y recuperación.
